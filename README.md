@@ -2,6 +2,8 @@
 
 5124-2716-7 《最优化方法及其MATLAB实现》 程序包新 习题
 
+论坛：https://www.ilovematlab.cn/forum-268-1.html
+
 <p align="center">
   <img src="./imgs/opt_matlab.jpg"/>
 </p>
