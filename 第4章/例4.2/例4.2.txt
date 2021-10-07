@@ -1,0 +1,6 @@
+clear
+syms k0 k1 x b
+fun=k0*exp(k1*x)-b;
+x_syms=[sym(x) sym(b)];b_syms=[sym(k0) sym(k1)];x0=[1.4 -1.0];
+x=[0.1 0.2 0.3 0.4 0.5]';b=[1.22 1.00 0.82 0.67 0.55]';
+[xmin,minf]=mylm(fun,x0,x_syms,x,b,b_syms);

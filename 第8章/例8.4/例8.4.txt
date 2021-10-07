@@ -1,0 +1,3 @@
+H=[1 -1;-1 2];f=[-2;-6];A=[1 1;-1 2;2 1];b=[2;2;3];lb=zeros(2,1);
+options=optimset('Largescale','off');
+[x,fval]=quadprog(H,f,A,b,[],[],lb,[],[],options);

@@ -1,0 +1,14 @@
+clear
+syms x y
+fun=2*x^2+2*y^2-2*x*y-4*x-6*y;
+A=[-1 -1;-1 -5;1 0;0 1];
+b=[-2;-5;0;0];
+x0=[0 0];esp1=0.0001;esp2=0.0001;x_syms=[sym(x) sym(y)];
+[xmin,minf]=zoutendijk1(fun,A,b,[],x0,x_syms,esp1,esp2,1);
+  
+clear
+syms x y
+fun=x^2+2*y^2-2*x^2*y^2;
+gfun=[-x*y-x^2-y^2+2;x;y];
+x0=[0 0];esp1=0.0001;esp2=0.0001;x_syms=[sym(x) sym(y)];
+[xmin,minf]=zoutendijk1(fun,[],[],gfun,x0,x_syms,esp1,esp2,2);

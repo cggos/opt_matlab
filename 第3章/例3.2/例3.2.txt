@@ -1,0 +1,5 @@
+clear;
+syms x y z
+phi=-3*x^2-y^2-2*z^2;hphi=x^2+y^2+z^2-3;gphi=[y-x;x];
+x_syms=[sym(x) sym(y) sym(z)];x0=[0 0 0];esp=0.0001;
+[xmin,minf]=PHR1(@opfun11,@ophfun1,@opgfun1,phi,hphi,gphi,x0,x_syms,esp);

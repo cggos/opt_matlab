@@ -1,0 +1,11 @@
+clear;
+syms x y;fun=100*(y-x^2)^2+(1-x)^2;
+x_syms=[sym(x) sym(y)];d0=[1 0];x0=[0 0];
+[y1,x1]=mysearch1(@opfun3,fun,x0,x_syms,d0,'d');    %根据Wolfe准则直接搜索求
+[y1,x1]=mysearch1([],fun,x0,x_syms,d0,'d');
+[y2,x2]=mysearch1(@opfun3,fun,x0,x_syms,d0,'a');    %根据 Armijo准则求
+[y2,x2]=mysearch1([],fun,x0,x_syms,d0,'a'); 
+[y3,x3]=mysearch1(@opfun3,fun,x0,x_syms,d0,'s');
+[y3,x3]=mysearch1([],fun,x0,x_syms,d0,'s');
+phi=100*(y+x^2)+(1-x)^2;
+[y4,x4]=mysearch1([],phi,x0,x_syms,d0,'equ'); 

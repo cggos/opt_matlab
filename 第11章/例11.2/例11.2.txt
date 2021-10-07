@@ -1,0 +1,2 @@
+popsize=[];iterm_max=[];pm=[];px=[];LB=[-5.12;-5.12];UB=[5.12;5.12];
+[max_x,maxfval]=myga1(@optifun15,LB,UB,popsize,iterm_max,px,pm,1e-8)

@@ -1,0 +1,62 @@
+clear
+A=[0 1 2;3 4 5;6 7 8];
+b=[1;2;3];
+lamda=1.8/(norm(A'))^2;
+x=zeros(3,1);
+for i=1:1000
+  x=x-lamda*A'*(A*x-b);
+end
+   
+clear
+syms x y z
+x_syms=[sym(x) sym(y) sym(z)];
+fun=sin(x)-y^2+z-2;x0=unifrnd(0,1,1,3);
+y=myjacobian1(fun,x_syms);y1=norm(y)^2;
+y1=eval(subs(y1,x_syms,x0));lamda=1.2/y1;
+for i=1:5000
+    e=-eval(subs(fun,x_syms,x0));
+    if e^2/2<1e-6
+       break
+    end
+    x0=x0+0.05*lamda*e*eval(subs(y,x_syms,x0));
+end
+
+clear
+syms x y 
+fun=[3*x+x^3+y+1;x+2*y+exp(y)-2];x_syms=[sym(x) sym(y)];
+J=myjacobian1(fun,x_syms);x0=unifrnd(-1,1,1,2);
+y=eval(subs(J,x_syms,x0));y1=norm(y'*y);lamda=1.2/y1;
+for i=1:500
+   e=-eval(subs(fun,x_syms,x0));
+   if norm(e)^2/2<1e-6;break; end
+  x0=x0'+1.3*lamda*eval(subs(J,x_syms,x0))*e;
+  x0=x0';
+end
+   
+clear 
+syms x
+fun=x^2;x_syms=sym(x);a=0;b=2;
+for i=1:100
+  xk(i)=2*(i-1)/99;
+end
+w=randn(100,1);
+for i=1:100
+    for j=1:100
+      c(i,j)=cos(xk(j)*(i-1));
+      f(j,1)=eval(subs(fun,x_syms,xk(j)));
+     end
+end
+lamda=1.35/(norm(c))^2;
+for k=1:500
+    e=f-c'*w;
+    J=norm(e)^2/2;
+    if J<1e-6
+       break
+    end
+    w=w+lamda*c*e;
+end
+I=0;
+for i=2:100
+    I=I+sin((i-1)*b)*w(i)/(i-1);
+end
+I=I+2*w(1);

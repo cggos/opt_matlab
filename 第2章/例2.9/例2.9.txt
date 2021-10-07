@@ -1,0 +1,10 @@
+clear;syms x y
+fun=x+2*y^2+exp(x^2+y^2);
+x_syms=[sym(x) sym(y)];x0=[1 0];esp=0.0001;
+[xmin1,minf1]=mynnewtown1(@opfun8,fun,x0,x_syms,esp);
+[xmin1,minf1]=mynnewtown1([],fun,x0,x_syms,esp);
+[xmin2,minf2]=DFP1(@opfun8,fun,x0,x_syms,esp);
+[xmin2,minf2]=DFP1([],fun,x0,x_syms,esp);
+[xmin3,minf3]=mybroyden1(@opfun8,fun,x0,x_syms,esp);
+[xmin3,minf3]=mybroyden1([],fun,x0,x_syms,esp)
+[xmin4,minf4]=BFGS1(@opfun8,fun,x0,x_syms,esp);

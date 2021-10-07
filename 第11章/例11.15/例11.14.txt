@@ -1,0 +1,6 @@
+clear
+fitness=@(x)(4*cos(x(1)*2)+x(2))*exp(2*x(2));
+A=[1 2];b=6;
+Lb=[0 0];ub=[6 6];
+options=gaoptimset('tolfun',1e-6);
+[x,fval,exitflag]=ga(@(x)fitness(x),2,A,b,[],[],Lb,ub,[],options);

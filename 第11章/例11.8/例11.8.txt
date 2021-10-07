@@ -1,0 +1,1 @@
+[maxx,maxf]=gaEP1(@optifun22,200,500)

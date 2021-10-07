@@ -1,0 +1,4 @@
+clear
+M=[0 3 4 inf inf inf;3 0 1 6 1 inf;4 1 0 8 3 inf;inf 6 8 0 4 2;inf inf 3 4 0 7;inf inf inf 2 7 0];
+dist=zeros(1,6);
+for i=1:6;for j=1:6;[path,a]=Mindist(M,i,j,1);dist(i)=dist(i)+a;end;end

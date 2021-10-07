@@ -1,0 +1,31 @@
+clear;
+syms x
+phi=exp(-x)*sin(x^2)';x0=[0,5];
+out=myfzeros(phi,x0);
+
+clear;
+syms x y 
+phi=(3*(1-x)^2*exp(-x^2-(y+1)^2)-10*(x/5-x^3-y^5)*exp(-x^2-y^2)-exp(-(x+1)^2-y^2)/3);
+xsyms={'x','y'};x_syms=[sym(x) sym(y)];x_range=[-3 3];
+x0=[-1.3479 0.1491
+    -0.0069 1.5702
+     0.2972 0.3421
+    -0.4631 -0.6228
+     0.2281 -1.6579
+     1.3479 -0.0439];
+out=mymultifun1(phi,x_range,x0,x_syms,xsyms,'u_u');
+
+clear;syms x y z;
+xsyms={'x','y','z'};phi=3*(x^3+y^3-z^3)+(z-x-y);
+out=mymultifun1(phi,[],[],[],xsyms,'u_L');
+
+
+clear;syms x y z a b;
+phi=7*x-6*y+4*z+a*(x^2+2*y^2+3*z^2-1)+b*(5*x+5*y-3*z-6);
+x_syms={{'x','y','z'},{'a','b'}};
+out=mymultifun1(phi,[],[],x_syms,[],'u_c');
+
+
+
+
+

@@ -1,0 +1,5 @@
+clear
+syms x y
+fun=-600*(1-(x-1)/(x^y-1))+4*y+20+320*x;
+x0=[0 1;7 15];esp=0.0001;
+[xmin,minf]=coord1(@opfun7,fun,x0,esp);

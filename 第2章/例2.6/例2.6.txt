@@ -1,0 +1,16 @@
+clear
+syms x y
+fun=x^2+2*y^2-4*x-2*x*y;
+x_syms=[sym(x) sym(y)];
+x0=[1 1];
+[xmin1,minf1]=mygrad1(@opfun5,fun,x0,x_syms,0.0001);
+[xmin1,minf1]=mygrad1([],fun,x0,x_syms,0.0001);
+[xmin2,minf2]=mynewton21(@opfun5,fun,x0,x_syms,'nt',0.0001);
+[xmin2,minf2]=mynewton21([],fun,x0,x_syms,'nt',0.0001);
+[xmin3,minf3]=mynewton21(@opfun5,fun,x0,x_syms,'zn',0.0001);
+[xmin3,minf3]=mynewton21([],fun,x0,x_syms,'zn',0.0001);
+[xmin4,minf4]=mynewton21(@opfun5,fun,x0,x_syms,'nt',0.0001);
+[xmin4,minf4]=mynewton21([],fun,x0,x_syms,'nt',0.0001);
+[xmin5,minf5]=mynewton21(@opfun5,fun,x0,x_syms,'xz',0.0001);
+[xmin5,minf5]=mynewton21([],fun,x0,x_syms,'xz',0.0001);
+

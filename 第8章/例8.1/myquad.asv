@@ -1,0 +1,24 @@
+function [x,lamda,minf]=myquad(H,c,A,b,type)  %二次规划的拉格朗日乘子法
+global m n
+IH=inv(H);
+AHA=A/H*A';
+IAHA=inv(AHA);
+AIH=A/H;
+G=IH-AIH'/AHA*AIH;
+B=AHA\AIH;
+C=-IAHA;
+x=B'*b-G*c;
+lamda=B*c-C*b;
+minf=0.5*x'*H*x+c'*x;
+
+[Q,R]=qr(A');
+Q1=Q(:,1);Q2=Q(:,2:3);
+x0=Q1*(R(1)^-1)'*b;
+Z=Q2;
+m=Z'*H*Z;n=Z'*(c+H*x0);
+d=fminunc(@optifun6,x0);
+x=x0+Z*d;
+A=Q1*(R^(-1))';
+lamda=A*(H*x+c);
+
+

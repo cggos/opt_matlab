@@ -1,0 +1,2 @@
+options = optimoptions('particleswarm','SwarmSize',100,'HybridFcn',@fmincon);
+ [x,fval]=particleswarm(@optifun39,2,[-2.048:-2.048],[2.048;2.048],options);

@@ -1,0 +1,5 @@
+LB=[-10;-10];UB=[10;10];
+eps1=1e-8;nvar=2;
+CodeLen=nvar*max(ceil(log2((UB-LB)./eps1 + 1)));
+[best_x,fval]=binfish(@(x)optifun15_1(x,LB,UB,CodeLen),30,[-10;-10],[10;10],2,1000,8,4,10,3)
+

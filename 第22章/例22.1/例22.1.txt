@@ -1,0 +1,4 @@
+myval=[100 0.05 10 5 3 3 0.25 0.5];
+bacterialnum=myval(1);step=myval(2);nc=myval(3);ns=myval(4);
+nre=myval(5);ned=myval(6);ped=myval(7);sr=myval(8);
+[best_x,best_f]=BFO(@optifun63,100,step,nc,ns,nre,ned,ped,sr,[0;0;0],[1;1;1]);

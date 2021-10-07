@@ -1,0 +1,1 @@
+[bestx,bestf]=COApso(@optifun38,1)

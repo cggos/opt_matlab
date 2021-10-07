@@ -1,0 +1,18 @@
+X=rand(400,2);
+CN=input('请输入聚类数');
+q=0.8;T0=100;Tend=90;     %模拟退火算法参数
+sizepop=10;MAXGEN=100;pc=0.7;pm=0.01;    %遗传算法参数
+%遗传－模拟退火算法
+[JbValue,U_Matrix,A_Matrix,Center] = GASAA(X,CN,T0,Tend,q,sizepop,MAXGEN,pc,pm);
+[JbValue1,A_Matrix1,Center1] = FCMCluster(X,CN);　　　%模糊聚类
+Jb = [JbValue  JbValue1];A = [A_Matrix  A_Matrix1];CC = [Center Center1];
+fprintf('遗传模拟退火算法（GA-SAA）与模糊C-矩阵（FCM）求得的结果对比如下：\n')
+fprintf('1. 目标函数的值为：\n')
+disp('GA-SAA算法    FCM算法')
+disp(Jb)
+fprintf('2. 聚类矩阵为：\n')
+disp('      GA-SAA算法         FCM算法')
+disp(A)
+fprintf('3. 各聚类的中心位置为：\n')
+disp('       GA-SAA算法            FCM算法')
+disp(CC)

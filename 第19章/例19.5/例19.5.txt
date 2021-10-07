@@ -1,0 +1,2 @@
+ [best_x,fval]=newABC(@optifun55,100,500,-5.*ones(4,1),5.*ones(4,1),300);
+ realbit(best_x)

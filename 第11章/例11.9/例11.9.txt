@@ -1,0 +1,4 @@
+for i=1:20
+  [val_x(i,:),val_f(i)]=gaES(@optifun23,300,500,-5.12*ones(2,1),5.12*ones(2,1));
+end
+

@@ -1,0 +1,2 @@
+LB=[0;0;0];UB=[100;4;1];
+[best_fval,best_x]=MainAneal(@optifun29,LB,UB)

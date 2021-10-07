@@ -1,0 +1,1 @@
+[bestx,fval]=SMSA(@optifun92,[],-10.*ones(30,1),10.*ones(30,1))

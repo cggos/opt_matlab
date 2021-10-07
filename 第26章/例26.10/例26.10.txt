@@ -1,0 +1,6 @@
+clear
+syms x y
+fun=(x^2-y+1)^2+(x-cos(pi*y/2))^2;
+fun1=[(x^2-y+1);(x-cos(pi*y/2))];
+esp=1e-6; x0=[5 4];x_syms=[sym(x) sym(y)];
+[bestx,fval]=gradnewton(fun,fun1,5,[5 4],x_syms,esp)

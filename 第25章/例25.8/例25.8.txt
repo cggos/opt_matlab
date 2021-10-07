@@ -1,0 +1,1 @@
+ [best_x,fval]=GWO(@optifun85,100,2000,-100.*ones(30,1),100.*ones(30,1))

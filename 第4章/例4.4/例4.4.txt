@@ -1,0 +1,8 @@
+clear
+syms k0 k1 x b
+fun=k0-k1/x-b;
+x_syms=[sym(x) sym(b)];b_syms=[sym(k0) sym(k1)];
+x0=[10 100]; esp=1e-6;
+x1=[2:16]';b0=[6.42 8.2 9.58 9.5 9.7 10 9.93 9.99 10.49 10.59 10.6 10.8 10.6 10.9 10.76]';
+[beta,minf,stats]=newls1(fun,x1,b0,x0,x_syms,b_syms,1,esp);
+[beta1,minf1,stats1]=newls1(fun,x1,b0,x0,x_syms,b_syms,2,esp);

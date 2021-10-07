@@ -1,0 +1,11 @@
+clear;
+%以下为行命令：
+options=gaoptimset('PopulationType','bitstring');
+[x_min,fval]=ga(@optifun19,27,[],[],[],[],[],[],[],options)
+
+%以下为GUI方法：
+optimtool
+%在打开的GUI中，Solver选择“ga”，fitness function中输入@opfifun19，
+%在populationtype中，选择“bitstring”，
+%再根据提示在Creation function和变异函数(mutation function)都选择“uniform”，其余可选择缺省值。
+%点击start就可以计算

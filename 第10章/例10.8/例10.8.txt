@@ -1,0 +1,15 @@
+clear
+M=[zeros(1,1) 5 4 2 inf*ones(1,13); inf zeros(1,1) inf*ones(1,2) 3 2 inf*ones(1,11);
+inf*ones(1,2) zeros(1,1) inf*ones(1,2) 3 2 inf*ones(1,10);
+inf*ones(1,3) zeros(1,1) inf*ones(1,2) 3 2 inf*ones(1,9);
+inf*ones(1,4) zeros(1,1) inf*ones(1,3) 5 3 inf*ones(1,7);
+inf*ones(1,5) zeros(1,1) inf*ones(1,3) 5 3 inf*ones(1,6);
+inf*ones(1,6) zeros(1,1) inf*ones(1,3) 5 3 inf*ones(1,5);
+inf*ones(1,7) zeros(1,1) inf*ones(1,3) 5 inf*ones(1,5);
+inf*ones(1,8) zeros(1,1) inf*ones(1,3) 2 1 inf*ones(1,3);
+inf*ones(1,9) zeros(1,1) inf*ones(1,3) 2 1 inf*ones(1,2);
+inf*ones(1,10) zeros(1,1) inf*ones(1,3) 2 1 inf*ones(1,1);
+inf*ones(1,11) zeros(1,1) inf*ones(1,3) 2 inf*ones(1,1);
+inf*ones(1,12) zeros(1,1) inf*ones(1,4); inf*ones(1,13) zeros(1,1) inf*ones(1,2) 0;
+inf*ones(1,14) zeros(1,1) inf*ones(1,1) 0; inf*ones(1,15) zeros(1,2); inf*ones(1,16) zeros(1,1)];
+[path,dist]=Mindist(M,1,17,1);

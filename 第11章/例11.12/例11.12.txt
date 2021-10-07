@@ -1,0 +1,1 @@
+val_f=gaDE1(@optifun26,40,800,zeros(200,1),ones(200,1),3)

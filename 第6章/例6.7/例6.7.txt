@@ -1,0 +1,4 @@
+clear
+n=500;x1=[n;nan*ones(n,1)];x2=0:n;x3=[0;nan*ones(n,1)];
+x=[x1 x2' x2' x2' x3]; t=[0.5;0.1;0.2;0.05];
+[y,fval]=dyprog(x,t,@decisfun8,@subfun8,@trafun8,@objfun8);

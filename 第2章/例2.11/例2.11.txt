@@ -1,0 +1,3 @@
+options = optimset('GradObj','on');
+x0 = [1,1];
+[x,fval] = fminunc(@optifun5,x0,options);

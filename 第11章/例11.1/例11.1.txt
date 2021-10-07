@@ -1,0 +1,7 @@
+clear;
+numvar=2;popsize=[];iterm_max=[];pm=[];px=[];LB=[-5.12;-5.12];UB=[5.12;5.12];    %利用默认值
+cbest1=myga(@optifun14,numvar,popsize,iterm_max,pm,px,LB,UB);
+
+
+clear;
+cbest2=myga(@optifun16,2,70,9000,0.2,0.95,[-0.5;-1],[0.5;1])

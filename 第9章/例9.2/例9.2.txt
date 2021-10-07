@@ -1,0 +1,17 @@
+clear;
+syms x1 x2 x3
+fun=x1+x2+x3-208;
+gfun=[240-3*x1;250-2*x2;420-4*x3;x1+x2+x3-208;x1;x2;x3];
+hfun=[];x0=[1 1 1];x_syms=[sym(x1) sym(x2) sym(x3)];
+[xmin1,minf1]=newsqp1(fun,hfun,gfun,x0,x_syms);
+
+fun=-15*x1-14*x2-12*x3;
+[xmin2,minf2]=newsqp1(fun,hfun,gfun,x0,x_syms);
+
+fun=-3*x1;
+[xmin3,minf3]=newsqp1(fun,hfun,gfun,x0,x_syms);
+
+A=[0.1 0.1 0.1 -1;-15*0.8 -14*0.8 -12*0.8 -1;-0.3 0 0 -1;3 0 0 0;0 2 0 0;0 0 4 0;-1 -1 -1 0];
+B=[20.8;-4210*0.8;-24;240;250;420;-208];f=[0 0 0 1];LB=[0;0;0;0];
+[x,val]=linprog(f,A,B,[],[],LB,[]);
+

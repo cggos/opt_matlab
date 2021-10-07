@@ -1,0 +1,6 @@
+clear
+syms x y 
+fun=1-x^2+exp(-x-y)+y^2-2*x*y+exp(x)-3*y;
+hfun=[x^2+y^2-5];
+x0=[1 1];x_syms=[sym(x) sym(y)];esp=0.0001;
+[xmin,minf]=newlag1(fun,hfun,x0,x_syms,esp);

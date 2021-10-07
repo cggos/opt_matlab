@@ -1,0 +1,13 @@
+clear 
+n=15; x1=[n;nan*ones(n-1,1)];x2=1:n;x2=x2';x=[x1 x2 x2 x2 x2];c=[0.9 0.8 0.5 0.7 0.6];
+[y,fval]=dyprog(x,c,@decisfun9,@subfun9,@trafun9,@objfun9);
+
+
+x1=[3*ones(1,5) 0.5*ones(1,5)]';
+Aeq=[ones(1,5) zeros(1,5)];Beq=15;
+LB=[ones(1,5) 0.5*ones(1,5)];UB=[10*ones(1,5) ones(1,5)];
+options=optimset('Algorithm','sqp','display','off');
+[x,fval]=fmincon(@optifun10,x1,[],[],Aeq,Beq,LB,UB,@optifun11,options);
+for i=1:5;x(i)=round(x(i));end
+x(6)=1-0.1^x(1);x(7)=1-0.2^x(2);x(8)=1-0.5^x(3);x(9)=1-0.3^x(4);x(10)=1-0.4^x(5);
+f=x(6)*x(7)*x(8)*x(9)*x(10);

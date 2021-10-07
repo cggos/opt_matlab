@@ -1,0 +1,6 @@
+clear
+x1=1:10;y1=[3.5 3.0 2.6 2.3 2.1 1.9 1.7 1.6 1.5 1.4];
+x0=[1 1 1];
+options=optimset('display','off');
+k1=lsqcurvefit(@optifun8,x0,x1,y1,[],[],options);
+ k2=lsqnonlin(@optifun9,x0,[],[],options);

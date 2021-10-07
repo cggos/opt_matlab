@@ -1,0 +1,4 @@
+Lb=[-1000;-10;-10];        %定义下界
+Lu=[1000;10;10];       %定义上界
+x_min=ga(@optifun18,3,[],[],[],[],Lb,Lu);
+x_min=fminsearch(@optifun18,x_min)

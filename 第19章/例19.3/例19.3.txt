@@ -1,0 +1,15 @@
+LB=[-5;-5];UB=[5;5];
+for i=1:4000
+  x(i,:)=LB'+(UB-LB)'.*rand(1,2);
+  y(i,1)=x(i,1)^2+x(i,2)^2;
+end
+k1=randperm(4000);
+input_train=x(k1(1:3900),:)';
+output_train=y(k1(1:3900),1)';
+net=newff(input_train,output_train,5);
+net.trainParam.epochs=100;
+net.trainParam.lr=0.1;
+net.trainParam.goal=1e-7;
+net=train(net,input_train,output_train);
+[best_x,fval]=newABC(@(x)optifun53(x,net),50,500,-5.*ones(2,1),5.*ones(2,1),100)
+

@@ -1,0 +1,6 @@
+clear
+syms x1 x2
+x_syms=[sym(x1) sym(x2)];
+fun=0.3*x1*x2+0.7*x1^2+0.7*x2^2;
+gfun=[2.5-x1;x1-x2;x1;x2;x1^2*x2-1;4*x2-x1];hfun=[];x0=[1 1];
+[xmin,minf]=newsqp1(fun,hfun,gfun,x0,x_syms);

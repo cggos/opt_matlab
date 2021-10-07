@@ -1,0 +1,1 @@
+[cbest1,cbest2]=qGA1(@optifun49)

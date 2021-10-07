@@ -1,0 +1,14 @@
+x = 0:0.25:10;
+y = 0.12*exp(-0.213*x)+0.52*exp(-0.17*x).*sin(1.23*x); 
+net = newff(x,y,[20,15,10,5]); y1 = sim(net,x); plot(x,y1,'k:');
+net.trainFcn = 'trainlm'; net.trainParam.epochs = 500; net.trainParam.goal = 1e-6;
+net = train(net,x,y); y2 = sim(net,x); E = y - y2; MSE = mse(E);
+hold on;plot(x,y,'r',x,y2,'-.*')     
+legend('未经训练的曲线','原函数曲线','训练后的曲线')
+
+Input =10*rand(2000,1);
+for i = 1:2000
+output(i,1) = 0.12*exp(-0.213*Input(i)) +0.54*exp(-0.17*Input(i))*sin(1.23*Input(i));
+end
+maxgen = 50; sizepop = 10; pc = 0.4; pm= 0.2;
+[F1,F2,D1,D2] = GABP(Input,output,maxgen,sizepop,0.4,0.2);

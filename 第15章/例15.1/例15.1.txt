@@ -1,0 +1,1 @@
+[bestx,bestf]=mypso(@optifun35,1)

@@ -1,0 +1,1 @@
+[best_x,fval]=qGA3(@optifun50)

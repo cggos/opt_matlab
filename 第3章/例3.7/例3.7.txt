@@ -1,0 +1,7 @@
+clear
+syms x y z
+fun=(x^2+y^2+z^2)/2;
+hfun=[x+2*y-z-4;x-y+z+2];
+x0=[0 0 0];esp=0.0001;
+x_syms=[sym(x) sym(y) sym(z)];
+[xmin,minf]=sqp1(fun,hfun,x0,x_syms,esp);

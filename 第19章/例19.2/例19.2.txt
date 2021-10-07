@@ -1,0 +1,1 @@
+[best_x,fval]=newABC(@optifun52,100,500,-10.*ones(30,1),10.*ones(30,1),100)

@@ -1,0 +1,1 @@
+[zbest_x,zbest_f]=psoBFO(@optifun66,100,1000,0.5,[-1;-1],[2;2])

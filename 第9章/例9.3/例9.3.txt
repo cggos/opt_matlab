@@ -1,0 +1,8 @@
+A=[320 350 390;0 0 -130];b=[3410;-156];Aeq=[1 1 1];beq=10; 
+options=optimset('Algorithm','sqp','display','off');
+[x,fval]=fmincon(@(x)-34*x(1)-32*x(2)-34*x(3),[1 1 1],A,b,Aeq,beq,[0;0;0],[],[],options);
+
+A=[320 350 390;0 0 -130;-34 -32 -34];
+b=[3410;-156;-340];
+[x,fval]=fmincon(@(x) 50*x(1)+48*x(2)+40*x(3),[1 1 1],A,b,Aeq,beq,[0;0;0],[],[],options);
+

@@ -1,0 +1,1 @@
+[bestx,fval]=FWA(@optifun96,10,5,500,-5.*ones(30,1),10.*ones(30,1))

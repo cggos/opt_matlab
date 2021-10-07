@@ -1,0 +1,3 @@
+a1=0:10;b1=0:22;s1=nan*ones(11,1);s1(1)=10;s2=nan*ones(23,1);s2(1)= 22;
+x1=[s1 a1' a1'];x2=[s2 b1' b1'];
+[y,fval]=dyprog2(x1,x2,@decisfun6,@subfun6,@trafun6);

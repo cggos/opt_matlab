@@ -1,0 +1,2 @@
+ [x_best1,y_best1]=antmin(@optifun31,1)
+ [x_best2,y_best2]=antmin(@optifun32,2)    

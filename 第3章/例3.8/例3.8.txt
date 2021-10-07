@@ -1,0 +1,19 @@
+clear
+syms x1 x2 x3 x4 x5
+fun=exp(x1*x2*x3*x4*x5)-(x1^3+x2^3+1)^2/2;
+hfun=[x1^2+x2^2+x3^2+x4^2+x5^2-10;x2*x3-5*x4*x5;x1^3+x2^3+1];
+gfun=[];
+x_syms=[sym(x1) sym(x2) sym(x3) sym(x4) sym(x5)];
+x0=[-1.7 1.5 1.8 -.6 -0.6];
+mu=[0 0 0]';
+lam=[];
+[xmin1,minf,mu,lam]=newsqp1(fun,hfun,gfun,x0,x_syms);
+
+clear
+syms x1 x2
+fun=exp(-x1-x2)+x1^2+2*x1*x2+x2^2+2*x1+6*x2;
+gfun=[2-x1-x2;x1;x2];
+hfun=[];
+x_syms=[sym(x1) sym(x2)];
+x0=[1 1];
+[xmin2,minf,mu,lam]=newsqp1(fun,hfun,gfun,x0,x_syms);

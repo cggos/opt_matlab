@@ -1,0 +1,18 @@
+clear
+c=[4,5,3,6];T=12;
+x=nan*ones(T+1,4);
+x(:,1)=(0:T);
+x(:,2)=(0:T)';
+x(:,3)=(0:T)';
+x(:,4)=(0:T)';
+[y,fval]=dyprog(x,c,@decisfun3,@subfun3,@trafun3);
+
+
+clear
+T=12;x=nan*ones(T+1,4);
+x(1:T-6,1)=(7:T);
+x(1:T-3,2) = (4:T)';
+x(:,3)=(0:T)';
+x(:,4)=(0:T)';
+c=[4,5,3,6];
+[y,fval]=dyprog(x,c,@decisfun4,@subfun3,@trafun3);

@@ -1,0 +1,9 @@
+clear
+x0=0;lamda=0.2;
+syms x
+phi=2*x^2-x-1;
+[a,b]=interval1(@opfun1,0,0.2,'f');
+[a,b]=interval1(phi,0,0.2,'f')
+[a,b]=interval1(@opfun1_1,0,0.2,'d');
+[a,b]=interval1(phi,0,0.2,'d');
+

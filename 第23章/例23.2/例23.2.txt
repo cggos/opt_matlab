@@ -1,0 +1,5 @@
+myval=[300 6 0.3 600];
+cat_num=myval(1);SMP=myval(2);SRD=myval(3);iter_max=myval(4);
+val_bound=[0 3;0 2;complex(0,-2) 0;0 complex(0,2);-2 0;0 complex(-1,3);complex(-1,-3) 0];
+UB=val_bound(:,1);LB=val_bound(:,2);
+x_max=cat1(@optifun61,cat_num,SMP,SRD,iter_max,LB,UB)

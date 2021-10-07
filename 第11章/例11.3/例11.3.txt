@@ -1,0 +1,1 @@
+[MinValue,MinFounction]=gaexhause(@optifun20,-10,10,0.001)

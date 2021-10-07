@@ -1,0 +1,5 @@
+clear;syms x y
+fun=x^3+y^3-3*x*y;
+x0=[2 2];x_syms=[sym(x) sym(y)];xsyms={'x','y'};esp=0.0001;
+[xmin,minf]=myconju1(@opfun6,fun,x0,x_syms,xsyms,esp);
+[xmin,minf]=myconju1([],fun,x0,x_syms,xsyms,esp);

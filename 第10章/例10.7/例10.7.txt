@@ -1,0 +1,4 @@
+clear
+M1=[0 16 22 30 41 59; inf*ones(1,1) 0 16 22 30 41; inf*ones(1,2) 0 17 23 31;
+inf*ones(1,3) 0 17 23; inf*ones(1,4) 0 18; inf*ones(1,5) 0];
+[path,dist]=Mindist(M1,1,6,1);

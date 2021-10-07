@@ -1,0 +1,6 @@
+clear
+M=[0 15 15 5 25;15 0 10 15 20;15 10 0 35 30;5 15 35 0 15;25 20 30 15 0];
+[road1,f0]=dyprogTSP(M);
+[Road2,Distance1]=graphTSP(M,1);
+[Road3,Distance2]=graphTSP(M,2);
+

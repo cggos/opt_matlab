@@ -1,0 +1,8 @@
+clear
+syms x y
+fun=x^2+4*y^2;
+A=[1 1;15 10;1 0;0 1];
+b=[1;12;0;0];
+E=[];
+x0=[0 2];x_syms=[sym(x) sym(y)];
+[xmin,minf]=rosen1(fun,A,b,E,x0,x_syms);

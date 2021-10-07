@@ -1,0 +1,1 @@
+[best_x,fval]=fish(@optifun41)

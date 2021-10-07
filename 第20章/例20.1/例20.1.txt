@@ -1,0 +1,3 @@
+[best_x,fval]=chaos(@optifun56,[-8;-8],[8;8],10000,500,1)
+
+[best_x,fval]=chaos(@optifun57,[-2;-2],[2;2],10000,30,500,2)

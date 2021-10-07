@@ -1,0 +1,4 @@
+clear
+syms x
+phi=1920*((1/(1+6*x))^2-(1/(1+3*x))^2);
+[xmin,minf]=interpolation1(@opfun4,phi,[0,1],0.1);

@@ -1,0 +1,2 @@
+ [best_x,fval]=dyIA(@optifun70,100,1000,0.9,[0;0],[6;6])
+ [y,y1,g1,g2]=optifun70(best_x);

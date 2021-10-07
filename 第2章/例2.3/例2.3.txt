@@ -1,0 +1,15 @@
+clear
+a=0;b=1;esp=0.0001;
+syms x
+phi=3*x^2-2*tan(x);
+x_syms=sym(x);
+[x01,minf]=myDF1(@opfun2,a,b,esp);         %二分法
+[x02,minf]= goldcut1(@opfun2,a,b,esp);    %0.618法
+[x02,minf]= goldcut1(phi,a,b,esp);
+[xmin,minf]=mynewton11(@opfun2,phi,0,esp);    %牛顿法，初始值为一个点
+[x03,minf]=myparabola1(@opfun2,[a b],esp);    %抛物线法
+[x03,minf]=myparabola1(phi,[a b],esp);
+[x04,minf]=interpolation1(@opfun2,phi,[a,b],0.1);   %二点三次插值法，0.1为初始步长
+[x04,minf]=interpolation1([],phi,[a,b],0.1); 
+[x,minf]=mysucfail1(@opfun2,0,0.1,esp); 
+

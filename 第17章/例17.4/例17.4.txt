@@ -1,0 +1,1 @@
+[bestx,fval]=bitSFLA(@optifun47,100,20,500,50,6)
